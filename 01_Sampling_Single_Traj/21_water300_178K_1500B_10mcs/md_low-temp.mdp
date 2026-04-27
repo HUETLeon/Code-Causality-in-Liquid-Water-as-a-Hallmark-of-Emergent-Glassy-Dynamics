@@ -1,0 +1,67 @@
+integrator               = md        
+dt                       = 0.001     ; 1 fs
+nsteps                   = 5000000000 ; 5mcs
+simulation-part          = 1
+
+
+nstxout                  = 1000000  ; 1  ns
+nstvout                  = 1000000  ; 1  ns
+nstfout                  = 1000000  ; 1  ns
+nstcalcenergy            = 1000     ; 1  ps
+nstenergy                = 1000     ; 1  ps
+nstlog                   = 1000000  ; 1  ns
+nstxout-compressed       = 1000     ; 1  ps
+
+continuation             = yes
+constraint-algorithm     = lincs
+constraints              = h-bonds
+
+cutoff-scheme            = Verlet
+nstlist                  = 25
+ns-type                  = Grid
+pbc                      = xyz
+periodic-molecules       = no
+rlist                    = 0.932
+
+
+coulombtype              = PME
+coulomb-modifier         = Potential-shift
+rcoulomb-switch          = 0
+rcoulomb                 = 0.9
+
+
+vdw-type                 = Cut-off
+vdw-modifier             = Potential-shift
+rvdw-switch              = 0
+rvdw                     = 0.9
+DispCorr                 = EnerPres
+table-extension          = 1
+fourierspacing           = 0.1
+fourier-nx               = 24
+fourier-ny               = 24
+fourier-nz               = 24
+pme-order                = 4
+ewald-rtol               = 1e-05
+ewald-rtol-lj            = 0.001
+lj-pme-comb-rule         = Geometric
+epsilon-surface          = 0
+implicit-solvent         = No
+
+;gen-vel			 = yes
+;gen-temp		 = 300
+
+tcoupl                   = Nose-Hoover
+nsttcouple               = 20
+nh-chain-length          = 1
+tc-grps                  = System
+tau-t                    = 8.011
+ref-t                    = 178
+
+; Pressure coupling is on
+pcoupl		        = Parrinello-Rahman	    ; Pressure coupling on in NPT
+pcoupltype	        = isotropic            ; uniform scaling of box vectors
+nstpcouple              = 20
+tau_p		        = 18.3		        ; time constant, in ps
+ref_p		        = 1500		       ; 1500 bars	   
+compressibility     	= 4.5e-5	        ; isothermal compressibility of water, bar^-1 (is very close to 300K value)
+refcoord_scaling        = com
