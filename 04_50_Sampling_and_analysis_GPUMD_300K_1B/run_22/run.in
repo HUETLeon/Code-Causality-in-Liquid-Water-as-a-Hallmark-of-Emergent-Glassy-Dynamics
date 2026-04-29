@@ -1,0 +1,8 @@
+potential       nep.txt
+
+ensemble        npt_mttk temp 300 300 iso 0.000101325 0.000101325 tperiod 8011 pperiod 18300
+time_step       1
+dump_exyz       10 0 0
+dump_restart    5000000
+run             25000000
+

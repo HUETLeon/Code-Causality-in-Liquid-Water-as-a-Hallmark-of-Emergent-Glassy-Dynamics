@@ -1,8 +1,8 @@
 ;
 ;	File 'mdout.mdp' was generated
 ;	By user: unknown (129971)
-;	On host: lrdn3323.leonardo.local
-;	At date: Sun May 18 14:18:24 2025
+;	On host: lrdn0426.leonardo.local
+;	At date: Sat May 31 18:08:46 2025
 ;
 ;	Created by:
 ;	              :-) GROMACS - gmx grompp, 2022.3-plumed_2.8.1 (-:
@@ -25,7 +25,7 @@ integrator               = md
 ; Start time and timestep in ps
 tinit                    = 0
 dt                       = 0.001
-nsteps                   = 5000000000
+nsteps                   = 10000000000
 ; For exact run continuation or redoing part of a run
 init-step                = 0
 ; Part index is updated automatically on checkpointing (keeps files separate)
@@ -61,15 +61,15 @@ rtpi                     = 0.05
 
 ; OUTPUT CONTROL OPTIONS
 ; Output frequency for coords (x), velocities (v) and forces (f)
-nstxout                  = 1000000
-nstvout                  = 1000000
-nstfout                  = 1000000
+nstxout                  = 10000000
+nstvout                  = 10000000
+nstfout                  = 10000000
 ; Output frequency for energies to log file and energy file
-nstlog                   = 1000000
-nstcalcenergy            = 1000
-nstenergy                = 1000
+nstlog                   = 10000000
+nstcalcenergy            = 10000
+nstenergy                = 10000
 ; Output frequency and precision for .xtc file
-nstxout-compressed       = 1000
+nstxout-compressed       = 10000
 compressed-x-precision   = 1000
 ; This selects the subset of atoms for the compressed
 ; trajectory file. You can select multiple groups. By
@@ -169,7 +169,7 @@ annealing-temp           =
 ; GENERATE VELOCITIES FOR STARTUP RUN
 gen-vel                  = no
 gen-temp                 = 300
-gen-seed                 = -135872549
+gen-seed                 = -1140981894
 
 ; OPTIONS FOR BONDS    
 constraints              = h-bonds
